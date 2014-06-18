@@ -17,12 +17,20 @@ class VirtualPet:
         elif Feed == "2":
             self.hunger=self.hunger - 10
         self.hunger=self.hunger + 10
+
+    def age(self):
+        
+
+    def report(self):
+        return {"Name":self.name,"Hunger":self.hunger,"Age":self.age}
+
         
 def DisplayMenu():
     print()
     print('MENU')
     print()
     print('1. Feed pet')
+    rpint('2. Status of pet')
     print()
     print('Select an option from the menu (or enter q to quit simulation): ', end='')
 
@@ -34,8 +42,10 @@ def GetMenuChoice():
 def Feed():
     Feed=input("What would you like to feed? (1 for Bannana, 2 for chocolate, anything else to not feed): ")
     if Feed == "1":
+        print()
         print("yummy bannana")
     elif Feed == "2":
+        print()
         print("CHOCOLATE I LOVE YOU!!!")
     else:
         print("But why do you not want to feed me :(")
@@ -52,6 +62,8 @@ def main():
         Choice = GetMenuChoice()
         if Choice == '1':
             Feed()
+        elif Choice == '2':
+            print(pet_one.report())
         else:
             print("End simulation")
     
